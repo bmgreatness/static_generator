@@ -16,6 +16,11 @@ pages = FlatPages(app)
 freezer = Freezer(app)
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('index.html', pages=pages), 404
+
+
 @app.route('/')
 def index():
     return render_template('index.html', pages=pages)

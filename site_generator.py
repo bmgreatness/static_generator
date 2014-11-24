@@ -1,10 +1,10 @@
-import sys
+#import sys
 
 
 from flask import Flask
 from flask_flatpages import FlatPages
 from flask import render_template
-from flask_frozen import Freezer
+#from flask_frozen import Freezer
 
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
@@ -13,7 +13,7 @@ FLATPAGES_EXTENSION = ".md"
 app = Flask(__name__)
 app.config.from_object(__name__)
 pages = FlatPages(app)
-freezer = Freezer(app)
+#freezer = Freezer(app)
 
 
 @app.errorhandler(404)
@@ -37,8 +37,10 @@ def page(path):
     page = pages.get_or_404(path)
     return render_template('page.html', page=page)
 
+
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] == "build":
-        freezer.freeze()
-    else:
-        app.run(port=8000)
+    #if len(sys.argv) > 1 and sys.argv[1] == "build":
+    #    freezer.freeze()
+    #else:
+    #    app.run(port=8000)
+    app.run(port=3210)

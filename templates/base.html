@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>My site</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename="style.css") }}">
 </head>
 <body>
     <h1><a href="{{ url_for("index") }}">My site</a></h1>
